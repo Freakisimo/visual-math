@@ -1,2 +1,3 @@
 # visual-math
-Add visual form to maths
+Make some visual algorithms for math problems
+
