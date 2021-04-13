@@ -59,7 +59,6 @@ const factorize = (v, p) => {
     } while (v !== 1)
     return tree;
 }
-
 class FactoringNumber {
 
     constructor(args) {
@@ -73,9 +72,8 @@ class FactoringNumber {
     }
 
     main() {
-        this.btn.addEventListener("click", () => {
-            let v = this.input_value.value,
-                safeV = parseInt(v);
+        let searchPrimes = (v) => {
+            let safeV = parseInt(v);
             if (safeV >= 2 & safeV <= 1000000) {
                 let p = getPrimes(safeV);
                 let f = factorize(safeV, p);
@@ -85,7 +83,13 @@ class FactoringNumber {
             } else {
                 console.log("Number grater than 1 and less than 1_000_000 required")
             }
-        })
+        };
+        this.btn.addEventListener("click", () => {
+            searchPrimes(this.input_value.value)
+        });
+        document.getElementById("input-value").addEventListener("keyup", ({key}) => {
+            if (key === "Enter"){ searchPrimes(this.input_value.value) }
+        });
     }
 
     factorize() {
