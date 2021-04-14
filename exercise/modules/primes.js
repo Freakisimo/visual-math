@@ -14,6 +14,7 @@ class PrimeNumbers {
             maxPrime = Math.max(...primes);
         if (n < maxPrime) {
             this.primes = primes;
+            return
         }
         let newRange = range(n + 1),
             sliceValue = newRange.indexOf(maxPrime) + 1 || 2,
