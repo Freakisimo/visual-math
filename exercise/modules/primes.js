@@ -13,7 +13,7 @@ class PrimeNumbers {
         let primes = this.getStoredPrimes() || [],
             maxPrime = Math.max(...primes);
         if (n < maxPrime) {
-            this.primes = primes;
+            this.primes = primes.filter(p => p <= n);
             return
         }
         let newRange = range(n + 1),
