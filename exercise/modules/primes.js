@@ -1,6 +1,6 @@
 "use strict";
 
-import {isMod,range} from './utils.js'
+import {isMod,range, pairRoot} from './utils.js'
 
 class PrimeNumbers {
     constructor (args) {
@@ -26,7 +26,8 @@ class PrimeNumbers {
             for (let j of checkRange) {
                 if(isMod(i, j)) {
                     x = x + 1;
-                } else if(x === 2) {
+                }
+                if(x === 2) {
                     break;
                 }
             }
@@ -44,6 +45,14 @@ class PrimeNumbers {
             return stored.split(",").map(n => parseInt(n))
         }
         return stored;
+    }
+
+    fermatPrimes() {
+        return this.primes.filter(p => pairRoot(p - 1).isPairRoot);
+    }
+
+    mersennePrime() {
+        // TODO: find way to get primes calculates as 2 ** p to check if this is prime
     }
 
     getPrimes(n) {

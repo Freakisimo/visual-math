@@ -47,7 +47,6 @@ class PrimesGrid {
                 }
             })
         })
-        console.log(newData)
         return newData;
     }
 

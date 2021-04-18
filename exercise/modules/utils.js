@@ -22,4 +22,21 @@ const complete_json = (default_json, new_json) => {
     return default_json;
 }
 
-export {isMod, range, chunk, complete_json}
+
+const pairRoot = (n, steps=0) => {
+    if(n==2) {
+        return {
+            isPairRoot:true, 
+            root: steps
+        }
+    } else if (isMod(n, 2)) {
+        return pairRoot(n/2, steps+1);
+    } else {
+        return {
+            isPairRoot:false, 
+            root: steps
+        }
+    }
+}
+
+export {isMod, range, chunk, complete_json, pairRoot}

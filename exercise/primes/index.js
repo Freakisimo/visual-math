@@ -15,12 +15,13 @@ let main = () => {
             let primes = pn.getPrimes(n);
             if (primes.length) {
                 let pg = new PrimesGrid({
-                    data: primes
+                    data: primes,
+                    squareSize: 40
                 })
                 pg.draw();
+                console.log(pn.fermatPrimes())
             }
             
-            console.log(primes)
         } else {
             console.log("Number must be grater than 2 and lesser than 1 Milion")
         }
