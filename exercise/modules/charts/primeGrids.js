@@ -1,6 +1,6 @@
 'use strict';
 
-import {complete_json, chunk} from '../utils.js';
+import {completeJson, chunk} from '../utils.js';
 
 class PrimesGrid {
 
@@ -14,7 +14,7 @@ class PrimesGrid {
         const width = 600, height = 800, squarePerRow = 10;
 
         this.selector = args.selector || "#chart-grid";
-        this.margin = args.margin || complete_json(margin, args.margin);
+        this.margin = args.margin || completeJson(margin, args.margin);
         this.width = args.width || width - this.margin.left - this.margin.right;
         this.height = args.height || height - this.margin.top - this.margin.bottom;
         this.element = document.querySelector(this.selector);

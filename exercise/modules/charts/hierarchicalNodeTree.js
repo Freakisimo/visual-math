@@ -1,6 +1,6 @@
 'use strict';
 
-import {complete_json} from '../utils.js';
+import {completeJson} from '../utils.js';
 
 class HierarchicalNodeTree {
 
@@ -14,7 +14,7 @@ class HierarchicalNodeTree {
         const width = 600, height = 800;
 
         this.selector = args.selector || "#chart-nodeTree"
-        this.margin = args.margin || complete_json(margin, args.margin);
+        this.margin = args.margin || completeJson(margin, args.margin);
         this.width = args.width || width - this.margin.left - this.margin.right;
         this.height = args.height || height - this.margin.top - this.margin.bottom;
         this.element = document.querySelector(this.selector)
